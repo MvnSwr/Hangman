@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Word {
-    private static List<String> words = new ArrayList<>();
+public abstract class Word {
+    private static List<String> words;
 
-    public static Word fillList(){
+    private static Word fillList(String str){
         try{
-            Scanner sc = new Scanner(new File("words.txt"));
+            Scanner sc = new Scanner(new File(str));
             String data = "";
             while (sc.hasNextLine()) {
                 data = sc.nextLine();
@@ -26,7 +26,15 @@ public class Word {
     }
 
     public static String getWord(){
+        words = new ArrayList<>();
+        Word.fillList("words.txt");
         Random ran = new Random();
         return words.get(ran.nextInt(words.size()));
+    }
+
+    public static List<String> getAlphabet(){
+        words = new ArrayList<>();
+        Word.fillList("alphabet.txt");
+        return words;
     }
 }
