@@ -15,6 +15,13 @@ public class Game {
         field = new Playingfield();
         sc = new Scanner(System.in);
 
+        //handling of blanks
+        for(int i = 0; i < guess.length; i++){ //Bessere Handhabung ToDo!!
+            if(word[i] == ' '){
+                guess[i] = ' ';
+            }
+        }
+
         //game loop
         while(field.getPointer() < 9){
             char c;
@@ -23,7 +30,7 @@ public class Game {
 
             //create the visual from the guess
             for(char str : guess){
-                if(str == '\u0000'){ //the NULL-value of a char
+                if(str == '\u0000'){ //the unicode NULL-value of a char
                     System.out.print("_");
                 }else if(str == ' '){
                     System.out.print(" ");
