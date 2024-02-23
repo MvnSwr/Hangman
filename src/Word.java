@@ -13,7 +13,7 @@ public abstract class Word {
             Scanner sc = new Scanner(new File(str));
             String data = "";
             while (sc.hasNextLine()) {
-                data = sc.nextLine();
+                data = sc.nextLine().toLowerCase();
                 words.add(data);
             }
             sc.close();
