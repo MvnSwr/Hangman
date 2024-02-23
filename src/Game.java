@@ -26,6 +26,7 @@ public class Game {
         while(field.getPointer() < 9){
             char c;
             Boolean win = true;
+            Boolean hit = false;
             field.getField();
 
             //create the visual from the guess
@@ -69,8 +70,6 @@ public class Game {
             }
 
             //check if the input was right
-            Boolean hit = false;
-
             for(int i = 0; i < guess.length; i++){
                 if(word[i] == c){
                     guess[i] = c;
@@ -79,7 +78,6 @@ public class Game {
             }
             if(hit){
                 field.decreasePointer();
-                continue;
             }
             alphabet.remove(c + "");
         }
