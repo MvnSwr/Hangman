@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public abstract class Word {
-    private static List<String> words;
+    private static List<String> words = new ArrayList<>();;
 
     private static Word fillList(String str){
         try{
@@ -26,14 +26,12 @@ public abstract class Word {
     }
 
     public static String getWord(){
-        words = new ArrayList<>();
         Word.fillList("words.txt");
         Random ran = new Random();
         return words.get(ran.nextInt(words.size()));
     }
 
     public static List<String> getAlphabet(){
-        words = new ArrayList<>();
         Word.fillList("alphabet.txt");
         return words;
     }

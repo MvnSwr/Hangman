@@ -85,6 +85,7 @@ public class Game {
         //Game Over
         field.getField();
         sc.close();
+        System.out.println("The word was " + new String(word));
         System.exit(0);
     }
 }
