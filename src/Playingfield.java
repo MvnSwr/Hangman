@@ -32,4 +32,8 @@ public class Playingfield {
     public void decreasePointer(){
         this.pointer--;
     }
+
+    public int length(){
+        return field.length-1;
+    }
 }

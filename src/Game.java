@@ -23,10 +23,16 @@ public class Game {
         }
 
         //game loop
-        while(field.getPointer() < 9){
+        while(field.getPointer() < field.length()){
             char c;
             Boolean win = true;
             Boolean hit = false;
+
+            //clear Console
+            System.out.print("\033[H\033[2J");  
+            System.out.flush();   //Doesnt work right yet ToDo!!
+
+            //get playfield
             field.getField();
 
             //create the visual from the guess
@@ -85,7 +91,7 @@ public class Game {
         //Game Over
         field.getField();
         sc.close();
-        System.out.println("The word was " + new String(word));
+        System.out.println("The word was: " + new String(word));
         System.exit(0);
     }
 }
