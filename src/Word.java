@@ -6,10 +6,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 public abstract class Word {
-    private static List<String> words = new ArrayList<>();;
+    private static List<String> words;
 
     private static Word fillList(String str){
         try{
+            words = new ArrayList<>();
             Scanner sc = new Scanner(new File(str));
             String data = "";
             while (sc.hasNextLine()) {
